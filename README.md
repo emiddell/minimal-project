@@ -26,3 +26,13 @@ Adapted from [The Good  Research Code Handbook](https://goodresearch.dev/setup#c
     src: Where you put reusable Python modules for your project. This is the kind of python code that you import.
 
     tests: Where you put tests for your code. We’ll cover testing in a later lesson.
+
+## create virtual environment
+```
+conda env create --name ENVNAME --file environment.yml
+```
+
+## install package 
+```
+pip install -e .
+```
