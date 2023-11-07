@@ -1,0 +1,36 @@
+# this file is *not* meant to cover or endorse the use of GitHub Actions, but rather to
+# help test this project
+
+name: test
+
+on: [push]
+
+jobs:
+  run_pytest:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
+    strategy:
+      max-parallel: 5
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Create conda environment
+        uses: mamba-org/setup-micromamba@v1
+        with:
+          environment-file: environment.yml
+          micromamba-version: 'latest'
+          cache-environment: true
+
+      - name: Conda info
+        run: conda info
+
+      - name: Install package
+        run: |
+           python -m pip install -e . --no-deps --force-reinstall
+
+      - name: Running Tests
+        run: |
+          python -m pytest --verbose
