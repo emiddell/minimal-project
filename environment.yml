@@ -16,3 +16,5 @@ dependencies:
   - scipy=1.11.3
   - click
   - pytest
+  - sphinx
+  - myst-parser
