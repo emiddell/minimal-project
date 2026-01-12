@@ -1,4 +1,4 @@
-name: test
+name: run_tests
 
 on: [push]
 
@@ -12,14 +12,13 @@ jobs:
       max-parallel: 5
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Create conda environment
-        uses: mamba-org/setup-micromamba@v1
+      - name: Setup Miniforge
+        uses: conda-incubator/setup-miniconda@v3
         with:
+          miniforge-version: latest
           environment-file: environment.yml
-          micromamba-version: 'latest'
-          cache-environment: true
 
       - name: Conda info
         run: conda info

@@ -1,5 +1,5 @@
 [project]
-name = "sample"
+name = "seminar_project"
 version = "0.1" 
 
 [build-system]

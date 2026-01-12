@@ -29,7 +29,7 @@ Adapted from [The Good  Research Code Handbook](https://goodresearch.dev/setup#c
 
 ## create virtual environment
 ```
-conda create --name ENVNAME --file environment.yml
+conda env create --name ENVNAME --file environment.yml
 ```
 
 ## install package 
